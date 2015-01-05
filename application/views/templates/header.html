@@ -28,7 +28,7 @@ echo link_tag('css/custom.css');?>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php echo base_url();?>">Study Budddies</a>
+          <a class="navbar-brand" href="<?php echo base_url();?>">Study Buddies</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav h4">
@@ -37,20 +37,20 @@ echo link_tag('css/custom.css');?>
             <?php if(uri_string()=="info")echo '<li class="dropdown active">';else{echo '<li class="dropdown">';}?>
               <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About <span class="caret"></span></a>
               <ul class="dropdown-menu lang-dropdown" role="menu">
-                <li class="dropdown-header"><?php if(current_url()==base_url().'index.php/info')echo '<a href="">';else{echo '<a href="',base_url(),'index.php/info">';}?>
+                <li class="dropdown-header"><?php if(uri_string()=="info")echo '<a href="">';else{echo '<a href="',base_url(),'index.php/info">';}?>
                 About Us</a></li>
-                <?php if(current_url()==base_url().'index.php/info#history')echo '<li class="active"><a href="">';else{echo '<li><a href="',base_url(),'index.php/info#history">';}?>
+                <li><a href="<?php echo base_url().'index.php/info#history';?>">
                 History</a></li>
-                <?php if(uri_string()=="info#mission")echo '<li class="active"><a href="">';else{echo '<li><a href="',base_url(),'index.php/info#mission">';}?>
+                <li><a href="<?php echo base_url().'index.php/info#mission';?>">
                 Our Mission</a></li>
-                <?php if(uri_string()=="info#goals")echo '<li class="active"><a href="">';else{echo '<li><a href="',base_url(),'index.php/info#goals">';}?>
+                <li><a href="<?php echo base_url().'index.php/info#goals';?>">
                 Our Goals</a></li>
                 <li class="divider"></li>
-                <li class="dropdown-header"><?php if(uri_string()=="info#team")echo '<a href="">';else{echo '<a href="',base_url(),'index.php/info#team">';}?>
+                <li class="dropdown-header"><a href="<?php echo base_url().'index.php/info#team';?>">
                 The Team</a></li>
-                <?php if(uri_string()=="info#core")echo '<li class="active"><a href="">';else{echo '<li><a href="',base_url(),'index.php/info#core">';}?>
+                <li><a href="<?php echo base_url().'index.php/info#core';?>">
                 Core</a></li>
-                <?php if(uri_string()=="info#helpers")echo '<li class="active"><a href="">';else{echo '<li><a href="',base_url(),'index.php/info#helpers">';}?>
+                <li><a href="<?php echo base_url().'index.php/info#helpers';?>">
                 Helpers</a></li>
               </ul>
             </li>
