@@ -28,6 +28,9 @@ class Welcome extends CI_Controller {
         $data['title'] = ucfirst($page); // Capitalize the first letter
 
         $this->load->view('templates/header.html', $data);
+        if($page == 'contact'){
+            $this->load->database();   
+        }
         $this->load->view($page.'.html', $data);
         $this->load->view('templates/footer.html', $data);
 	}

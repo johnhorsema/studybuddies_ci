@@ -92,14 +92,26 @@
     border-right: solid 4px #00396c;
 }
 
-/*20px top margin*/
+/*30px top margin*/
 .top-margin{
     margin-top: 30px;
 }
 
+@media(min-width:768px) {
+    .top-margin{
+        margin-top: 80px;
+    }
+}
+
+@media(min-width:992px) {
+    .top-margin{
+        margin-top: 30px;
+    }
+}
+
 /*section featured*/
 section.featured {
-	padding: 30px 0 60px;
+	padding: 40px 0 60px;
 	background: #4baaff;
 	color: #fdfdfd;
 }
@@ -345,7 +357,7 @@ section.featured.inner {
 }
 
 .team-detail{
-    color: #aaaaaa;
+    color: #777;
     font-size: 25px;
     text-align: center;
     line-height: 10px;
@@ -361,20 +373,78 @@ section.featured.inner {
 }
 
 .helper-border{
-    border: solid #aaaaaa 2px;
+    border: solid #777 2px;
     border-radius: 8px;
-    margin: 10px;
-    padding-bottom: 20px;
+    margin: 2px;
 }
 
-.helper span{
+.helper .entry{
     background: #f1f1f1;
     border-radius: 5px;
-    padding: 5px;
+    padding: 3px;
+    width: 150px;
+    margin: 10px;
 }
 
-.helper .helper-highlight{
+.helper .highlight{
     background: #4baaff;
     color: #fff;
     font-weight: bold;
+}
+
+.news-container{
+    border-radius: 4px;
+    background: #777;
+    overflow: auto;
+}
+
+.news-container .news-content{
+    color: #fff;
+    margin: 10px;
+}
+
+.news-container .news-content a{
+    color: #4baaff;
+}
+
+.news-container .news-content hr{
+    border: 0;
+    height: 2px;
+    background-image: -webkit-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0));
+    background-image: -moz-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0));
+    background-image: -ms-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0));
+    background-image: -o-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0));
+}
+
+.news-container .news-content .news-img{
+    width: auto;
+    height: 110px;
+    float: right;
+    margin: 5px;
+}
+
+.contact-section-comment{
+    background: #337ab7;
+    padding-bottom: 20px;  
+}
+
+.contact-section-comment .help-block{
+    color: #fff;
+}
+
+.contact-section-comment .comment-body{
+    background: #5393cb;
+}
+
+.contact-section-comment li.ui-state-default{
+    background:#fff0;
+    border:none;
+    border-bottom:1px solid #ddd;
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.contact-section-message{
+    background: #337ab7;
+    padding-bottom: 20px;
 }
