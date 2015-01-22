@@ -10,7 +10,50 @@
                     <h4>News</h4>
                 </div>
                       <ul class="list-group text-muted" id="accordion" role="tab" aria-multiselectable="true">
-                        <li class="list-group-item" id="newsheadingOne">
+                          <?php
+$data = array(
+              'news_entries' => array(
+                                      array('id' => '1', 'title' => 'Title 1', 'brief' => 'bb', 'body' => 'Body 1', 'timestamp' => '1421646219'),
+                                      array('id' => '2', 'title' => 'Title 2', 'brief' => 'bb', 'body' => 'Body 2', 'timestamp' => '1421646219'),
+                                      array('id' => '3', 'title' => 'Title 3', 'brief' => 'bb', 'body' => 'Body 3', 'timestamp' => '1421646219'),
+                                      array('id' => '4', 'title' => 'Title 4', 'brief' => 'bb', 'body' => 'Body 4', 'timestamp' => '1421646219'),
+                                      array('id' => '5', 'title' => 'Title 5', 'brief' => 'bb', 'body' => 'Body 5', 'timestamp' => '1421646219')
+                                      )
+            );
+foreach($data as $key=>&$value){
+    if(is_array($value)){
+        foreach($value as &$v){
+            $v['timestamp'] = date("m.d.y",$v['timestamp']);
+        }
+    }
+}
+$template = '{news_entries}
+<li class="list-group-item" id="heading-{id}">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse-{id}" aria-expanded="true" aria-controls="collapse-{id}">
+                            <h4 class="list-group-item-heading">
+                                {title}
+                            </h4>
+                            </a>
+                            <h5>{brief}</h5>
+                            <div id="collapse-{id}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-{title}">
+                            <div class="list-group-item-text">
+                                <div class="news-container">
+                                    <div class="news-content align-left">
+                                       <p>
+                                            {body}
+                                            </p>
+                                        <p class="align-right h6">Last Modified: {timestamp}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </li>{/news_entries}
+';
+$result = $this->parser->parse_string($template, $data, TRUE);
+$result = preg_replace("/panel-collapse collapse/", "panel-collapse collapse in", $result, 1);
+echo $result;
+                            ?>
+                        <!--<li class="list-group-item" id="newsheadingOne">
                             <a data-toggle="collapse" data-parent="#accordion" href="#newscollapseOne" aria-expanded="true" aria-controls="newscollapseOne">
                             <h4 class="list-group-item-heading">
                                 Cras justo odio
@@ -93,7 +136,7 @@
                                 </div>
                             </div>
                             </div>
-                        </li>
+                        </li>-->
                       </ul>
                 </div>
             </div>

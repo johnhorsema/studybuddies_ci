@@ -42,6 +42,9 @@ $route['default_controller'] = "welcome";
 $route['news'] = "welcome/index/news";
 $route['info'] = "welcome/index/info";
 $route['contact'] = "welcome/index/contact";
+$route['sign'] = "welcome/index/sign";
+$route['login'] = "welcome/index/login";
+$route['logout'] = "welcome/index/logout";
 $route['404_override'] = '';
 
 

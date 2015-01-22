@@ -58,13 +58,40 @@ echo link_tag('css/custom.css');?>
           </ul>
             <div class="smallbar">
                 <ul class="smallbar-ul">
-                    <a href="https://www.facebook.com/groups/709791705712366/"><li class="fb"></li></a>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-stbd role-user">Welcome, <strong>
+<?php
+    if(empty($this->session->userdata['name'])!=1){
+        $displayname = explode(" ", $this->session->userdata['name']);
+        echo $displayname[0];
+    }
+    else{
+        echo 'Guest';
+    }
+?>
+</strong>.</button>
+                      <button type="button" class="btn btn-stbd dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                          <?php
+                        if(empty($this->session->userdata['name'])!=1) {echo 
+                       '<li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Profile</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Settings</a></li>
+                        <li><a href="',base_url(),'index.php/logout','"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a></li>';}
+                        else{
+echo '<li><a href="'.base_url().'index.php/sign'.'"><span class="glyphicon glyphicon-saved" aria-hidden="true"></span> Sign-up</a></li>
+                         <li><a href="'.base_url().'index.php/login'.'"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</a></li>';}?>
+                      </ul>
+                    </div>
+                    <a href="https://www.facebook.com/studybuddieshk"><li class="fb"></li></a>
                     <a href="mail:contact@studybuddies.com.hk"><li class="mail"></li></a>
                     <li class="dropdown">
                     <a href="" class="lang" data-toggle="dropdown" role="button" aria-expanded="false">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span class="caret"></span></a>
                     <ul class="dropdown-menu lang-dropdown" role="menu">
-                    <a href="eng"><li>English</li></a>
-                    <a href="chi"><li>中文</li></a>
+                    <a href="#"><li>English</li></a>
+                    <a href="#"><li>中文</li></a>
                     </ul>
                     </li>
                 </ul>

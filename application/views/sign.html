@@ -1,0 +1,239 @@
+<?php
+$name = $email = $pass = "";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST["display_name"];
+    $email = $_POST["email"];
+    $pass = $_POST["password"];
+}
+?>
+<div class="container top-margin">
+    <div class="container-signup center-block">
+    <div class="row">
+    <div class="tab-content tabs-login col-lg-12 col-md-12 col-sm-12 cols-xs-12">
+        <h2><span class="glyphicon glyphicon-saved" aria-hidden="true"></span> Sign Up <small></small></h2>
+        			<div class="row"><hr class="colorgraph"></div>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	$querycmd = "
+				SELECT *
+				FROM users
+				WHERE
+					email = ?
+			";
+	$query_params = array(
+		$email
+	);
+    $query = $this->db->query($querycmd, $query_params);
+
+    if(!($query->num_rows() > 0)){
+		$querycmd = "
+            INSERT INTO users (
+                username,
+                name,
+                pass,
+                email,
+                salt,
+                created
+            ) VALUES (
+                ?,
+                ?,
+                ?,
+                ?,
+                ?,
+                ?
+            )
+        ";
+		
+		$salt = dechex(mt_rand(0, 2147483647)) . dechex(mt_rand(0, 2147483647)); 
+		$pass = hash('sha256', $_POST['password'] . $salt); 
+		for($round = 0; $round < 65536; $round++)
+        {
+            $pass = hash('sha256', $pass . $salt);
+        }
+		
+		$query_params = array(
+            $email,
+            $name,
+            $pass,
+            $email,
+            $salt,
+            time()
+        );
+
+		$query = $this->db->query($querycmd, $query_params);
+
+		echo '<div class="alert alert-success alert-dismissable" role="alert"><strong>Success</strong>: Sign up completed.<br>Proceeding to login...<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+         $this->output->set_header('refresh:5; url='.base_url().'index.php/login');  
+	}
+	else{
+		echo '<div class="alert alert-danger alert-dismissable" role="alert"><strong>Error</strong>: Sign up failed. Please try again.<br>Resetting...<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+         $this->output->set_header('refresh:5; url='.base_url().'index.php/sign');
+	}
+}
+?>
+		<form method="post" accept-charset="utf-8" autocomplete="off" role="form" class="form-horizontal" data-toggle="validator" action="<?php echo current_url();?>">
+                    <div class="form-group">
+                        <input type="text" name="display_name" id="display_name" class="form-control form-control-signup" placeholder="Display Name" tabindex="1" required>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" id="email" class="form-control form-control-signup" placeholder="Email Address" tabindex="2" required>
+                        <div class="help-block with-errors"></div>
+                    </div>
+					<div class="form-group">
+						<input type="password" class="form-control form-control-signup" name="password" id="password" placeholder="Password" tabindex="3" data-minlength="6">
+                        <div class="help-block with-errors">Minimum 6 characters.</div>
+					</div>
+					<div class="form-group">
+						<input type="password" name="password_confirmation" id="password_confirmation" class="form-control form-control-signup" placeholder="Confirm Password" tabindex="4" data-match="#password" required>
+                        <div class="help-block with-errors"></div>
+					</div>
+            <div class="form-group">
+            <div class="row">
+            <div class="col-sm-2">
+                <div class="btn-group" data-toggle="buttons">
+                    <span class="btn btn-default btn-agree control-label" for="t_and_c">
+                        <input type="checkbox" tabindex="5" id="t_and_c"required/>Agree
+                    </span>
+                </div>
+            </div>
+            <div class="col-sm-offset-1 col-sm-9">
+					 By clicking <strong class="label label-success">Agree</strong>, you agree to the <a href="#" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a> set out by us, Study Buddies&trade;, including our Cookie Usage.
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            </div>
+            <div class="row"><hr class="colorgraph"></div>
+			<div class="row">
+                <div class="form-group ">
+                    <div class="col-xs-6"><button type="submit" name="signup" id="submit" tabindex="6" class="btn btn-primary btn-block btn-lg">Sign up</button></div>
+				<div class="col-xs-6"><a href="#" class="btn btn-info btn-block btn-lg">Connect</a></div>
+                </div>
+			</div>
+		</form>
+	</div>
+</div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 class="modal-title" id="myModalLabel">Terms & Conditions</h3>
+			</div>
+			<div class="modal-body">
+<p>1. Acceptance of Terms of Service</p>
+
+<p>1.1. This section lists out the Terms of Service for this web site. When you are entering this web site and any related pages, you have agreed to these Terms of Service.</p>
+
+<br><br>
+
+<p>2. Description of Services</p>
+
+<p>2.1. Study Buddies provides a variety of information on programmes and services through this web site. Photo albums and videos are also used to showcase the activities and premises. Enrollment could also be performed through this web site for some of the activities. The web site also keeps connected with the users through different interactive features.</p>
+
+<p>2.2. Some services and features (e.g. enrollment to activities) are only available to registered users.</p>
+
+<br><br>
+
+<p>3. Privacy</p>
+
+<p>3.1. Study Buddies respects personal data privacy, and ensures that the procedures of its services when collecting, using, storing, transferring and enquiring personal data complies with the Personal Data (Privacy) Ordinance of Hong Kong. Based on this principle, related Privacy Policy is set up, with details to be found under the section on &ldquo;Privacy Policy&rdquo;.</p>
+
+<br><br>
+                
+<p>4. Advertising and links</p>
+
+<p>4.1. Couple with the developments of this web site, we may accept advertisements, and provide links to World Wide Web sites or resources of other companies / organizations.</p>
+
+<p>4.2. When you communicate or have business dealings with the advertisers found on or through this web site, or link to the website of other companies or organizations for browsing or business transactions, any obligations and responsibilities thus arising, including any other terms, conditions, warranties or representations associated with such dealings, are solely between you and such advertiser. Study Buddies and the web site shall not be responsible or liable for any loss or damage of any kind incurred.</p>
+
+<br><br>
+
+<p>5. Sharing content and information</p>
+
+<p>5.1. When you are sharing content and information, you must have the ownership right of the content, or the right for public dissemination, display, performance or broadcasting of the content concerned.</p>
+
+<p>5.2. For copyright related materials, such as photos and videos, you agree to grant Study Buddies and the web site a royalty free license to publish such content.</p>
+
+<p>5.3. Any other reproduction, adaptation, distribution, dissemination or making available of the information available within this website for commercial use is strictly prohibited unless prior written authorization is obtained from Study Buddies.</p>
+
+<p>5.4. Study Buddies makes every effort to ensure the accuracy and completeness of the content of this web site. It shall not accept any responsibilities for any loss or damage arising from the information, or reproduction or re-dissemination of the information, within this website.</p>
+
+<br><br>
+
+<p>6. You agree not to use the Services for the following purposes:</p>
+
+<p>6.1. upload, post, email, transmit or otherwise disseminate any content that contains personal data (such as identity card number or personal contact information), or internal or confidential information of any company, organization or association;</p>
+
+<p>6.2. upload, post, email, transmit or otherwise disseminate any content that is unlawful, harmful, threatening, abusive, harassing, tortuous, defamatory, vulgar, obscene, libellous, invasive of another's privacy, hateful, or racially, ethnically or otherwise objectionable;</p>
+
+<p>6.3. harm minors in any way;</p>
+
+<p>6.4. forge headers or otherwise manipulate identifiers in order to disguise the origin of any content transmitted through the Services;</p>
+
+<p>6.5. impersonate any person or entity, or falsely state or otherwise misrepresent your affiliation with a person or entity;</p>
+
+<p>6.6. upload, post, email or otherwise transmit any content that infringes any patent, trademark, trade secret, copyright or other proprietary rights of any party;</p>
+
+<p>6.7. upload, post, email or otherwise transmit any unsolicited or unauthorised advertising, promotional materials, &quot;junk mail,&quot; &quot;spam,&quot; &quot;chain letters,&quot; &quot;pyramid schemes,&quot; or any other form of solicitation, except in those areas that are designated for such purpose;</p>
+
+<p>6.8. upload, post, email or otherwise transmit any material that contains software viruses or any other computer code, files or programs designed to interrupt, damage, destroy or limit the functionality of any computer software or hardware or telecommunications equipment;</p>
+
+<p>6.9. interfere with or disrupt the Services or servers or networks connected to the Services, or disobey any requirements, procedures, policies or regulations of networks connected to the Services;</p>
+
+<p>6.10.intentionally or unintentionally violate any applicable local, national or international law or regulation including, but not limited to, regulations promulgated by any securities exchange;</p>
+
+<p>6.11.&quot;stalk&quot; or otherwise harass another; or</p>
+
+<p>6.12.extract, collect, process, combine or store personal data about other users.</p>
+
+<br><br>
+
+<p>7. Violations</p>
+
+<p>7.1. You agree that the content you share will not breach the Terms of Service of this web site.</p>
+
+<p>7.2. The web site administrator reserves the right to delete any content and information being posted that is in breach of this Terms of Service.</p>
+
+<p>7.3. If any registered user is continuously in breach of this Terms of Service, the web site administrator has the right to terminate the access right of your login account.</p>
+
+<br><br>
+
+<p>8. Termination of account</p>
+
+<p>8.1. If the registered user has made inappropriate behavior, causing damages to other users, this web site, or Study Buddies, the web site administrator may immediately terminate his login account. All affected users will also be notified through email.</p>
+
+<p>8.2. Registered users may apply to the web site administrator for the termination of service.</p>
+
+<p>8.3. After the termination of the registered account, all enrollments and payments made before the termination of the account will remain valid, and no refund could be arranged.</p>
+
+<br><br>
+
+<p>9. Notification</p>
+
+<p>9.1. All notifications would be posted to the web site.</p>
+
+<br><br>
+
+<p>10. Amendment to the Terms of Service</p>
+
+<p>10.1.This web site reserves the right to amend this Terms of Service from time to time.</p>
+
+<p>10.2.All amendments to the Terms of Service would be posted to the web site.</p>
+
+<p>(March 2015)</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<div class="clearfix"></div><br/>
+
