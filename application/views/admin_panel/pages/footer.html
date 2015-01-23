@@ -1,0 +1,58 @@
+  <div class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+      <p class="navbar-text pull-left">&copy; Study Buddies <?php echo date("Y",time());?>
+      </p>
+      
+      <a href="http://youtu.be/zJahlKPCL9g" class="navbar-btn btn-gray btn pull-right" data-toggle="modal" data-target="#guide">
+      <span class="glyphicon glyphicon-th"></span>  Administrator's Guide</a>
+        <div class="modal fade" id="guide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="container">
+            <div class="row">
+              <div class="panel col-sm-6 col-sm-offset-3 text-center">
+                <br>
+                <h2>Guide for Adminiatrators</h2>
+                <p>This is a guide for the technicalities involved in operating this admin panel.</p>
+                <hr>
+                <h4>Purpose</h4>
+                  <p class="text-left">A managerial platform for Administrators to view, edit and update content on the Study Buddies website.</p>
+                <h5><i>-Click outside to close-</i></h5>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+      
+    <!-- jQuery -->
+    <script src="<?php echo base_url();?>admin_panel_assets/bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="<?php echo base_url();?>admin_panel_assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="<?php echo base_url();?>admin_panel_assets/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript 
+    <script src="<?php echo base_url();?>admin_panel_assets/bower_components/raphael/raphael-min.js"></script>
+    <script src="<?php echo base_url();?>admin_panel_assets/bower_components/morrisjs/morris.min.js"></script>
+    <script src="<?php echo base_url();?>/admin_panel_assets/js/morris-data.js"></script>-->
+
+    <!-- Custom Theme JavaScript -->
+    <script src="<?php echo base_url();?>admin_panel_assets/dist/js/sb-admin-2.js"></script>
+      
+                            <!-- DataTables JavaScript -->
+            <script src="<?php echo base_url();?>admin_panel_assets/bower_components/DataTables/media/js/jquery.dataTables.min.js"></script>
+            <script src="<?php echo base_url();?>admin_panel_assets/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+            <!-- Run DataTable in tables_news-->
+            <script>
+            $(document).ready(function() {
+                var tables = ["#nande-entries","#comments-entries","messages-entries"];
+                var length = tables.length;
+                for (var i = 0; i < length; i++) {
+                    $(tables[i]).DataTable({
+                            responsive: true
+                    });
+                }
+            });
+            </script>
+</html>

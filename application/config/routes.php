@@ -39,6 +39,12 @@
 */
 
 $route['default_controller'] = "welcome";
+$route['admin'] = "admin";
+$route['admin/chat'] = "admin/index/chat";
+$route['admin/tables/news'] = "admin/index/tables_news";
+$route['admin/tables/comments'] = "admin/index/tables_comments";
+$route['admin/tables/messages'] = "admin/index/tables_messages";
+$route['admin/tables/users'] = "admin/index/tables_users";
 $route['news'] = "welcome/index/news";
 $route['info'] = "welcome/index/info";
 $route['contact'] = "welcome/index/contact";
@@ -46,7 +52,6 @@ $route['sign'] = "welcome/index/sign";
 $route['login'] = "welcome/index/login";
 $route['logout'] = "welcome/index/logout";
 $route['404_override'] = '';
-
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
