@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container-signup center-block">
     <div class="row">
     <div class="tab-content tabs-login col-lg-12 col-md-12 col-sm-12 cols-xs-12">
-        <h2><span class="glyphicon glyphicon-saved" aria-hidden="true"></span> Sign Up <small></small></h2>
+        <h2><span class="glyphicon glyphicon-saved" aria-hidden="true"></span> <?php echo $this->lang->line('signup');?> <small></small></h2>
         			<div class="row"><hr class="colorgraph"></div>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -110,7 +110,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="row"><hr class="colorgraph"></div>
 			<div class="row">
                 <div class="form-group ">
-                    <div class="col-xs-6"><button type="submit" name="signup" id="submit" tabindex="6" class="btn btn-primary btn-block btn-lg">Sign up</button></div>
+                    <div class="col-xs-6"><button type="submit" name="signup" id="submit" tabindex="6" class="btn btn-primary btn-block btn-lg"><?php echo $this->lang->line('signup');?></button></div>
 				<div class="col-xs-6"><a href="#" class="btn btn-info btn-block btn-lg">Connect</a></div>
                 </div>
 			</div>

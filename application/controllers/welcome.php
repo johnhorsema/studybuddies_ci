@@ -26,9 +26,15 @@ class Welcome extends CI_Controller {
         }
 
         $data['title'] = ucfirst($page); // Capitalize the first letter
-        
         $this->load->helper(array('html','url'));
         $this->load->library('session');
+        if(isset($this->session->userdata['lang'])){
+            $this->lang->load('english','english');  
+        }
+        else{
+            $this->lang->load('zh_hk','zh_hk');
+        }
+        //$this->lang->load('english','english'); 
         $this->load->view('templates/header.html', $data);
         if($page == 'contact' || $page == 'news' || $page == 'login' || $page == 'sign'){
             $this->load->database();   
