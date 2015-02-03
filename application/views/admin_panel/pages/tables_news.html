@@ -42,7 +42,11 @@ $table = '{entries}
                                             <td>{id}</td>
                                             <td>{title}</td>
                                             <td>{brief}</td>
-                                            <td>{content}</td>
+                                            <td><a data-toggle="collapse" href="#source-{id}" aria-expanded="false" aria-controls="source-{id}">(Source)</a><div class="collapse" id="source-{id}">
+  <xmp class="well">
+    {content}
+  </xmp>
+</div><div style="pointer-events: none;">{content}</div></td>
                                             <td>{timestamp}</td>
                                             <td>{type}</td>
                                             <td class="align-center"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit-{id}" ><span class="glyphicon glyphicon-pencil"></span></button></td>

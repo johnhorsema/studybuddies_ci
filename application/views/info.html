@@ -1,36 +1,48 @@
 <div class="container top-margin">
     <div class="page-header">
-    <h1><?php echo $this->lang->line('about_about_us');?> <small><?php echo $this->lang->line('about_tagline');?></small></h1>
+    <h1><?php echo $this->lang->line('about_title');?></h1>
     </div>
-    <div class="panel panel-default top-margin">
+    <div class="panel panel-default">
     <section class="featured" id="intro">
     <div class="container"> 
         <div class="row mar-bot40">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-6">
                 <div class="align-center">
-                    <h2 class="slogan"><?php echo $this->lang->line('about_intro');?></h2>
-                    <p>
-                    <?php echo $this->lang->line('about_intro_sub');?>
-                    </p>	
+                    <h2 class="slogan"><?php echo $this->lang->line('about_intro');?></h2>	
                 </div>
             </div>
         </div>
     </div>
     </section>
         <div class="panel-body">
-            <h4 class="text-muted"><?php echo $this->lang->line('about_intro_content');?></h4>
+            <h4 class="text-muted" style="line-height:1.5"><?php echo $this->lang->line('about_intro_content');?></h4>
+        </div>
+    </div>
+    <div class="panel panel-default">
+    <section class="featured" id="mission">
+    <div class="container"> 
+        <div class="row mar-bot40">
+            <div class="col-md-6">
+                <div class="align-center">
+                    <h2 class="slogan"><?php echo $this->lang->line('about_mission');?></h2>	
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+        <div class="panel-body">
+            <div class="col-lg-12 text-center text-muted">
+                <h3 class="section-heading"><?php echo $this->lang->line('motto');?></h3>
+            </div>
         </div>
     </div>
     <div class="panel panel-default">
     <section class="featured" id="past_events">
     <div class="container"> 
         <div class="row mar-bot40">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-6">
                 <div class="align-center">
                     <h2 class="slogan"><?php echo $this->lang->line('about_past');?></h2>
-                    <p>
-                    <?php echo $this->lang->line('about_past_sub');?>
-                    </p>
                 </div>
             </div>
         </div>
@@ -43,72 +55,72 @@
                 <div class="col-lg-12">
                     <ul class="timeline">
                         <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="images/timeline/1.png" alt="">
-                            </div>
+                            <a href="<?php echo base_url();?>index.php/gallery#promotion" target="_blank" class="timeline-image">
+                                <img class="img-rounded img-responsive" src="../images/banner.jpg" alt="">
+                            </a>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     <h4><?php echo $this->lang->line('about_past_timeline_1_time');?></h4>
-                                    <h4 class="subheading"><?php echo $this->lang->line('about_past_timeline_1_subheading');?></h4>
+                                    <h3 class="subheading" style="font-weight:bold"><?php echo $this->lang->line('about_past_timeline_1_subheading');?></h3>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted"><?php echo $this->lang->line('about_past_timeline_1_content');?></p>
+                                    <h4 class="text-muted" style="line-height:1.5"><?php echo $this->lang->line('about_past_timeline_1_content');?></p>
                                 </div>
                             </div>
                         </li>
                         <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="images/timeline/2.png" alt="">
-                            </div>
+                            <a href="<?php echo base_url();?>index.php/gallery#1314_chi_mock_oral" target="_blank"  class="timeline-image">
+                                <img class="img-rounded img-responsive" src="../images/photo_gallery/1314_chi_mock_oral/main.jpg" alt="">
+                            </a>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     <h4><?php echo $this->lang->line('about_past_timeline_2_time');?></h4>
-                                    <h4 class="subheading"><?php echo $this->lang->line('about_past_timeline_2_subheading');?></h4>
+                                    <h3 class="subheading" style="font-weight:bold"><?php echo $this->lang->line('about_past_timeline_2_subheading');?></h3>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted"><?php echo $this->lang->line('about_past_timeline_2_content');?></p>
+                                    <h4 class="text-muted" style="line-height:1.5"><?php echo $this->lang->line('about_past_timeline_2_content');?></p>
                                 </div>
                             </div>
                         </li>
                         <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="images/timeline/3.png" alt="">
-                            </div>
+                            <a href="<?php echo base_url();?>index.php/gallery#1314_eng_mock_oral" target="_blank"  class="timeline-image">
+                                <img class="img-rounded img-responsive" src="../images/photo_gallery/1314_eng_mock_oral/main.jpg" alt="">
+                            </a>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     <h4><?php echo $this->lang->line('about_past_timeline_3_time');?></h4>
-                                    <h4 class="subheading"><?php echo $this->lang->line('about_past_timeline_3_subheading');?></h4>
+                                    <h3 class="subheading" style="font-weight:bold"><?php echo $this->lang->line('about_past_timeline_3_subheading');?></h3>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted"><?php echo $this->lang->line('about_past_timeline_3_content');?></p>
+                                    <h4 class="text-muted" style="line-height:1.5"><?php echo $this->lang->line('about_past_timeline_3_content');?></p>
                                 </div>
                             </div>
                         </li>
                         <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="images/timeline/4.png" alt="">
-                            </div>
+                            <a href="<?php echo base_url();?>index.php/gallery#1314_gg" target="_blank"  class="timeline-image">
+                                <img class="img-rounded img-responsive" src="../images/photo_gallery/1314_gg/main.jpg" alt="">
+                            </a>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     <h4><?php echo $this->lang->line('about_past_timeline_4_time');?></h4>
-                                    <h4 class="subheading"><?php echo $this->lang->line('about_past_timeline_4_subheading');?></h4>
+                                    <h3 class="subheading" style="font-weight:bold"><?php echo $this->lang->line('about_past_timeline_4_subheading');?></h3>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted"><?php echo $this->lang->line('about_past_timeline_4_content');?></p>
+                                    <h4 class="text-muted" style="line-height:1.5"><?php echo $this->lang->line('about_past_timeline_4_content');?></p>
                                 </div>
                             </div>
                         </li>
                         <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="images/timeline/4.png" alt="">
-                            </div>
+                            <a href="<?php echo base_url();?>index.php/gallery#1415_mock_exam" target="_blank" class="timeline-image">
+                                <img class="img-rounded img-responsive" src="../images/photo_gallery/1415_mock_exam/001.jpg" alt="">
+                            </a>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     <h4><?php echo $this->lang->line('about_past_timeline_5_time');?></h4>
-                                    <h4 class="subheading"><?php echo $this->lang->line('about_past_timeline_5_subheading');?></h4>
+                                    <h3 class="subheading" style="font-weight:bold"><?php echo $this->lang->line('about_past_timeline_5_subheading');?></h3>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted"><?php echo $this->lang->line('about_past_timeline_5_content');?></p>
+                                    <h4 class="text-muted" style="line-height:1.5"><?php echo $this->lang->line('about_past_timeline_5_content');?></p>
                                 </div>
                             </div>
                         </li>
@@ -124,206 +136,101 @@
     
         </div>
     </div>
-    <div class="panel panel-default top-margin">
-    <section class="featured" id="mission">
-    <div class="container"> 
-        <div class="row mar-bot40">
-            <div class="col-md-6 col-md-offset-3">
-                <div class="align-center">
-                    <h2 class="slogan"><?php echo $this->lang->line('about_mission');?></h2>
-                    <p>
-                    <?php echo $this->lang->line('about_mission_sub');?>
-                    </p>	
-                </div>
-            </div>
-        </div>
-    </div>
-    </section>
-        <div class="panel-body">
-        Panel content
-        </div>
-    </div>
-    <div class="panel panel-default top-margin">
-    <section class="featured" id="goals">
-    <div class="container"> 
-        <div class="row mar-bot40">
-            <div class="col-md-6 col-md-offset-3">
-                <div class="align-center">
-                    <h2 class="slogan"><?php echo $this->lang->line('about_goals');?></h2>
-                    <p>
-                    <?php echo $this->lang->line('about_goals_sub');?>
-                    </p>	
-                </div>
-            </div>
-        </div>
-    </div>
-    </section>
-        <div class="panel-body">
-        Panel content
-        </div>
-    </div>
-    <div class="panel panel-default top-margin">
+    <div class="panel panel-default">
     <section class="featured" id="team">
     <div class="container"> 
         <div class="row mar-bot40">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-6">
                 <div class="align-center">
                     <h2 class="slogan"><?php echo $this->lang->line('about_team');?></h2>
-                    <p>
-                    <?php echo $this->lang->line('about_team_sub');?>
-                    </p>	
                 </div>
             </div>
         </div>
     </div>
     </section>
     <div class="panel-body">
-    <div class="panel panel-default">
+        <div class="row">
+            <!--Member Template-->
+            <!--<div class="col-sm-4">
+                <div class="team-member">
+                    <img src="<?php echo base_url().'images/team/1.jpg';?>" class="img-responsive img-circle" alt="">
+                    <h4>Kay Garland</h4>
+                    <p class="text-muted">President</p>
+                </div>
+                <div class="team-detail">
+                <span>&#9650</span>
+                <div class="panel panel-default h4 text-muted">
+                  <div class="panel-body">
+                    <p>Intro - blahblahblah</p>
+                  </div>
+                  <ul class="list-group">
+                    <li class="list-group-item">Cras justo odio</li>
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Morbi leo risus</li>
+                  </ul>
+                </div>
+                </div>
+            </div>-->
+            <?php
+                $team_member = '
+                {members}
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <h3>{name}</h3>
+                        <h4 class="text-muted" style="font-weight:bold">{post}</h4>
+                        <p class="text-muted">{quali}</p>
+                    </div>
+                </div>
+                {/members}
+                ';
+
+                $arr = array(
+                        array('name'=>'CHAN Tin Tak (Tak)', 
+                              'post'=>'Founder and President', 
+                              'quali'=>'HKU BBA (A&F) Yr2'),
+                        array('name'=>'AU-YEUNG Yui Ying (Hilary)', 
+                              'post'=>'Vice President', 
+                              'quali'=>'HKU BBA (A&F) Yr2'),
+                        array('name'=>'LI Shuk Ping (Lily)', 
+                              'post'=>'Secretary', 
+                              'quali'=>'HKU BA&BEd(LangEd)-Eng Yr3'),
+                        array('name'=>'LEE Him Wo (Paul)', 
+                              'post'=>'Program Director', 
+                              'quali'=>'HKBU BA (ENG), BEd (ELT)'),
+                        array('name'=>'CHAN Wai Pong (PongPong)', 
+                              'post'=>'Program Director', 
+                              'quali'=>'HKU BNURS Yr3'),
+                        array('name'=>'CHIU Man Tsang (Yumi)', 
+                              'post'=>'Operational Officer', 
+                              'quali'=>'CUHK LL.B Yr2'),
+                        array('name'=>'CHIU Kin Kwan (King)', 
+                              'post'=>'Program Director & I.C.T. Officer', 
+                              'quali'=>'HKU BSc (Maths, Phys)'),
+                        array('name'=>'MA Chuan En (Jonathan)', 
+                              'post'=>'I.C.T. Officer', 
+                              'quali'=>'HKUST BEng (COMP) Yr2')
+                       );
+                $farr = array('members'=>$arr);
+                $result = $this->parser->parse_string($team_member, $farr, TRUE);
+                echo $result;
+            ?>
+        </div>
+        <div class="row top-margin">
+            <div class="col-lg-12 text-center text-muted">
+                <h3 class="section-heading"><?php echo $this->lang->line('about_core_tagline_helpers');?></h3>
+            </div>
+        </div>
+
+    <!--Template Panel-->
+    <!--<div class="panel panel-default">
         <div class="panel-heading">
-        <h3 class="panel-title" id="core"><?php echo $this->lang->line('about_core');?></h3>
+        <h3 class="panel-title" id="helpers">Some Title</h3>
         </div>
 
         <div class="panel-body">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading"><?php echo $this->lang->line('about_core_tagline');?></h2>
-                </div>
-            </div>
-            <div class="row top-margin">
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="<?php echo base_url().'images/team/1.jpg';?>" class="img-responsive img-circle" alt="">
-                        <h4>Kay Garland</h4>
-                        <p class="text-muted">President</p>
-                    </div>
-                    <div class="team-detail">
-                    <span>&#9650</span>
-                    <div class="panel panel-default h4 text-muted">
-                      <div class="panel-body">
-                        <p>Intro - blahblahblah</p>
-                      </div>
-                      <ul class="list-group">
-                        <li class="list-group-item">Cras justo odio</li>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Morbi leo risus</li>
-                      </ul>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="<?php echo base_url().'images/team/1.jpg';?>" class="img-responsive img-circle" alt="">
-                        <h4>Larry Parker</h4>
-                        <p class="text-muted">Vice President</p>
-                    </div>
-                    <div class="team-detail">
-                    <span>&#9650</span>
-                    <div class="panel panel-default h4 text-muted">
-                      <div class="panel-body">
-                        <p>Intro - blahblahblah</p>
-                      </div>
-                      <ul class="list-group">
-                        <li class="list-group-item">Cras justo odio</li>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Morbi leo risus</li>
-                      </ul>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="<?php echo base_url().'images/team/1.jpg';?>" class="img-responsive img-circle" alt="">
-                        <h4>Diana Pertersen</h4>
-                        <p class="text-muted">Secretary</p>
-                    </div>
-                    <div class="team-detail">
-                    <span>&#9650</span>
-                    <div class="panel panel-default h4 text-muted">
-                      <div class="panel-body">
-                        <p>Intro - blahblahblah</p>
-                      </div>
-                      <ul class="list-group">
-                        <li class="list-group-item">Cras justo odio</li>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Morbi leo risus</li>
-                      </ul>
-                    </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row top-margin">
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="<?php echo base_url().'images/team/1.jpg';?>" class="img-responsive img-circle" alt="">
-                        <h4>Kay Garland</h4>
-                        <p class="text-muted">President</p>
-                    </div>
-                    <div class="team-detail">
-                    <span>&#9650</span>
-                    <div class="panel panel-default h4 text-muted">
-                      <div class="panel-body">
-                        <p>Intro - blahblahblah</p>
-                      </div>
-                      <ul class="list-group">
-                        <li class="list-group-item">Cras justo odio</li>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Morbi leo risus</li>
-                      </ul>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="<?php echo base_url().'images/team/1.jpg';?>" class="img-responsive img-circle" alt="">
-                        <h4>Larry Parker</h4>
-                        <p class="text-muted">Vice President</p>
-                    </div>
-                    <div class="team-detail">
-                    <span>&#9650</span>
-                    <div class="panel panel-default h4 text-muted">
-                      <div class="panel-body">
-                        <p>Intro - blahblahblah</p>
-                      </div>
-                      <ul class="list-group">
-                        <li class="list-group-item">Cras justo odio</li>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Morbi leo risus</li>
-                      </ul>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="<?php echo base_url().'images/team/1.jpg';?>" class="img-responsive img-circle" alt="">
-                        <h4>Diana Pertersen</h4>
-                        <p class="text-muted">Secretary</p>
-                    </div>
-                    <div class="team-detail">
-                    <span>&#9650</span>
-                    <div class="panel panel-default h4 text-muted">
-                      <div class="panel-body">
-                        <p>Intro - blahblahblah</p>
-                      </div>
-                      <ul class="list-group">
-                        <li class="list-group-item">Cras justo odio</li>
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item">Morbi leo risus</li>
-                      </ul>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-        <h3 class="panel-title" id="helpers"><?php echo $this->lang->line('about_helpers');?></h3>
-        </div>
-
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading"><?php echo $this->lang->line('about_helpers_tagline');?></h2>
+                    <h2 class="section-heading">Some tagline</h2>
                 </div>
             </div>
             <div class="helper-border">
@@ -334,27 +241,9 @@
                         <td><span class="entry">Dawn Willow</span></td>
                         <td><span class="entry">Dawn Willow</span></td>
                     </tr>
-                    <tr>
-                        <td><span class="entry">Dawn Willow</span></td>
-                        <td><span class="entry highlight">Dawn Willow</span></td>
-                        <td><span class="entry">Dawn Willow</span></td>
-                        <td><span class="entry">Dawn Willow</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="entry">Dawn Willow</span></td>
-                        <td><span class="entry highlight">Dawn Willow</span></td>
-                        <td><span class="entry">Dawn Willow</span></td>
-                        <td><span class="entry">Dawn Willow</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="entry">Dawn Willow</span></td>
-                        <td><span class="entry highlight">Dawn Willow</span></td>
-                        <td><span class="entry">Dawn Willow</span></td>
-                        <td><span class="entry">Dawn Willow</span></td>
-                    </tr>
                 </table>
             </div>
         </div>
-    </div>
+    </div>-->
     </div>
     </div>

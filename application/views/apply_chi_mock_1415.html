@@ -1,0 +1,97 @@
+<div class="container top-margin">
+    <div class="page-header">
+    <h1>中文模擬口試2015 <small>一年一度DSE前舉行的中文模擬口試</small></h1>
+    </div>
+    <div class="container"> 
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well text-muted">
+                    <p class="align-center"><img src="<?php echo base_url();?>images/photo_gallery/1314_chi_mock_oral/main.jpg" class="img-rounded news-img-full top-margin"></p> <h2 class="align-center">Title</h2><p>Lorem <a href="">hyperlink</a> dolor sit amet, consectetuer adipiscing elit. 文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</p> <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec </p> <hr>
+                        <div class="row form-group">
+                            <div class="col-xs-12">
+                                <ul class="nav nav-pills nav-justified thumbnail setup-panel">
+                                    <li class="active"><a href="#step-1">
+                                        <h4 class="list-group-item-heading">Step 1</h4>
+                                        <p class="list-group-item-text">Basic Information</p>
+                                    </a></li>
+                                    <li class="disabled"><a href="#step-2">
+                                        <h4 class="list-group-item-heading">Step 2</h4>
+                                        <p class="list-group-item-text">Background and Session Preference</p>
+                                    </a></li>
+                                    <li class="disabled"><a href="#step-3">
+                                        <h4 class="list-group-item-heading">Step 3</h4>
+                                        <p class="list-group-item-text">Submit</p>
+                                    </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row setup-content" id="step-1">
+                            <div class="col-xs-12">
+                                <div class="col-md-offset-3 col-md-6 well">
+                                    <h2>Basic Information</h2>
+                                    <form data-toggle="validator" role="form" method="POST" action="<?php echo current_url();?>_submit">
+                                        <div class="form-group">
+                                            <label>Name</label>
+                                            <input class="form-control" type="text" name="name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input class="form-control" type="email" name="email" reuired>
+                                        </div>
+                                    <a id="activate-step-2" class="btn btn-stbd btn-sm"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> Next</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row setup-content" id="step-2" style="display:none">
+                            <div class="col-xs-12">
+                                <div class="col-md-offset-3 col-md-6 well">
+                                    <h2>Background</h2>
+                                        <div class="form-group">
+                                            <label>School</label>
+                                            <input class="form-control" type="text" name="school" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Secondary level</label><br>
+                                            <select name="level">
+                                                <option value="<S3">S3 or below</option>
+                                                <option value="S4">S4</option>
+                                                <option value="S5">S5</option>
+                                                <option value="S6">S6</option>
+                                            </select>
+                                        </div>
+                                    <h2>Session Preference</h2>
+                                    <div class="form-group">
+                                            <label>Timeslots</label><br>
+                                            <input type="radio" name="session" value="4/3 1730-2130">
+                                            <label>4/3 1730-2130</label><br>
+                                            
+                                            <input type="radio" name="session" value="13/3 0930-1230">
+                                            <label>13/3 0930-1230</label><br>
+                                            
+                                            <input type="radio" name="session" value="5/3 1730-2130">
+                                            <label>5/3 1730-2130</label><br>
+                                            
+                                            <input type="radio" name="session" value="7/3 1330-1730">
+                                            <label>7/3 1330-1730</label><br>
+                                            
+                                            <input type="radio" name="session" value="12/3 1730-2130">
+                                            <label>12/3 1730-2130</label><br>
+                                    </div>
+                                    <a id="activate-step-3" class="btn btn-stbd btn-sm"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> Next</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row setup-content" id="step-3" style="display:none">
+                            <div class="col-xs-12">
+                                <div class="col-md-offset-3 col-md-6 well text-center">
+                                    <div class="form-group">
+                                    <button type="submit" name="event-info-submit" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-ok-sign"></span> Submit</button>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>

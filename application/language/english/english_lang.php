@@ -1,33 +1,29 @@
 <?php
 $lang['home_title'] = "Home";
 $lang['news_title'] = "News";
-$lang['events_title'] = "Events";
+$lang['partners_title'] = "Partners";
 $lang['about_title'] = "About";
 $lang['about_about_us'] = "About Us";
 $lang['about_intro'] = "Introduction";
 $lang['about_past'] = "Past Events";
 $lang['about_mission'] = "Our Mission";
-$lang['about_goals'] = "Our Goals";
-$lang['about_team'] = "The Team";
-$lang['about_core'] = "Core";
-$lang['about_helpers'] = "Helpers";
+$lang['about_team'] = "Core Team 2014/15";
+$lang['gallery_title'] = "Gallery";
 $lang['contact_title'] = "Contact";
 $lang['welcome_comma'] = "Welcome, ";
 $lang['signup'] = "Sign-up";
 $lang['login'] = "Login";
 //News
-$lang['nne_tagline'] = "our latest updates";
+$lang['no_news'] = "Please stay tuned to our latest updates.";
 $lang['last_mod'] = "Last Modified: ";
 //About
-$lang['about_tagline'] = "the intro, past events and the team";
-$lang['about_intro_sub'] = "First things first.";
+$lang['motto'] = "Making knowledge accessible to all";
 $lang['about_intro_content'] = "Study Buddies is an organization founded by a group of passionate university students in 2013. With the vision of ‘Making knowledge accessible to all’, Study Buddies has organized voluntary education services including Q&A platform, written mock exams, mock oral exams and ‘Give & Gift’ Used Books Recycling. Since its establishment, Study Buddies has served more than 5,000 students from over 200 secondary schools.";
 
-$lang['about_past_sub'] = "There is properly no history, only biography.<br><i>Ralph Waldo Emerson</i>";
 
 $lang['about_past_timeline_1_time'] = "";
 $lang['about_past_timeline_1_subheading'] = "Q&A Platform";
-$lang['about_past_timeline_1_content'] = "Currently, the online Q&A platform is serving more than 4,300 students with the support of over 300 registered tutors. Study Buddies promotes the idea of ‘Learn to Ask, Ask to Learn’ in which students are encouraged to ask questions proactively. Any questions related to academic are very welcomed on the platform. If you possess tertiary qualifications or above, you are welcome to <a class=\"label-warning\" href=\"http://goo.gl/Zz7FGp\">join us</a> as a voluntary tutor.";
+$lang['about_past_timeline_1_content'] = "Currently, the online Q&A platform is serving more than 4,300 students with the support of over 300 registered tutors. Study Buddies promotes the idea of ‘Learn to Ask, Ask to Learn’ in which students are encouraged to ask questions proactively. Any questions related to academic are very welcomed on the platform. If you possess tertiary qualifications or above, you are welcome to <a style=\"color:#0988fb; font-weight:bold;\" href=\"http://goo.gl/Zz7FGp\">join us</a> as a voluntary tutor.";
 $lang['about_past_timeline_2_time'] = "4-5, 7, 12-13/3/2014 ";
 $lang['about_past_timeline_2_subheading'] = "2014 DSE Chinese Mock Oral Exams";
 $lang['about_past_timeline_2_content'] = "Chinese mock oral exams were held in early March, serving around 200 Form 5, 6 secondary school students and retakers. The event was free-of-charge for all participants regardless of their backgrounds. It provided an extra chance for students from all over Hong Kong to practice under a realistic public exam atmosphere.<br><br>
@@ -89,12 +85,9 @@ $lang['about_past_timeline_3_content'] = "2014 DSE English mock oral exams were 
     <td>City University of Hong Kong 30th Anniversary Student Programmes - Community Services and Engagement Projects</td>
   </tr>
 </table>";
-$lang['about_past_timeline_4_time'] = "22nd December, 2014";
-$lang['about_past_timeline_4_subheading'] = "2015 DSE English and Mathematics Mock Written Exams";
-$lang['about_past_timeline_4_content'] = "2015 DSE English and Mathematics Mock Written Exams were held on 22nd December, 2014 in Queen’s College and the debriefing sessions were later held on 3rd January, 2015 in City University of Hong Kong. Students could get a valuable chance to practice under similar setting of public exams. The subsequent debriefing sessions helped students identify their own strengths and weaknesses. The event was free-of-charge. We have served more than 600 students (person-times) from over 150 secondary schools.";
-$lang['about_past_timeline_5_time'] = "July - September, 2014";
-$lang['about_past_timeline_5_subheading'] = "‘Give & Gift’ Used Books Recycling";
-$lang['about_past_timeline_5_content'] = "The event was held from July to September 2014 aiming to collect used books and re- distribute them to students in need. Study Buddies hopes to advocate the concept of ‘resources sharing among the community’ through this event. We gave out free book coupons from different bookstores as a means of appreciation towards the donors. Over 1,200 used books were collected and around 1,000 books were re-distributed to students.<br><br>
+$lang['about_past_timeline_4_time'] = "July - September, 2014";
+$lang['about_past_timeline_4_subheading'] = "‘Give & Gift’ Used Books Recycling";
+$lang['about_past_timeline_4_content'] = "The event was held from July to September 2014 aiming to collect used books and re- distribute them to students in need. Study Buddies hopes to advocate the concept of ‘resources sharing among the community’ through this event. We gave out free book coupons from different bookstores as a means of appreciation towards the donors. Over 1,200 used books were collected and around 1,000 books were re-distributed to students.<br><br>
 <table class=\"text-muted\">
   <tr>
     <td>Co-organizer:</td>
@@ -129,15 +122,12 @@ $lang['about_past_timeline_5_content'] = "The event was held from July to Septem
     <td>Disney Friends for Change Youth Grant</td>
   </tr>
 </table>";
+$lang['about_past_timeline_5_time'] = "22nd December, 2014";
+$lang['about_past_timeline_5_subheading'] = "2015 DSE English and Mathematics Mock Written Exams";
+$lang['about_past_timeline_5_content'] = "2015 DSE English and Mathematics Mock Written Exams were held on 22nd December, 2014 in Queen’s College and the debriefing sessions were later held on 3rd January, 2015 in City University of Hong Kong. Students could get a valuable chance to practice under similar setting of public exams. The subsequent debriefing sessions helped students identify their own strengths and weaknesses. The event was free-of-charge. We have served more than 600 students (person-times) from over 150 secondary schools.";
 $lang['about_past_timeline_end'] = "Be Part<br>Of Our<br>Story!";
 
-$lang['about_mission_sub'] = "Make your life a mission - not an intermission.<br><i>Arnold Glasgow</i>";
-
-$lang['about_goals_sub'] = "Achievable goals are the first step to self improvement.<br><i>J. K. Rowling</i>";
-
-$lang['about_team_sub'] = "There's nothing wrong with staying small. You can do big things with a small team.<br><i>Jason Fried</i>";
-$lang['about_core_tagline'] = "Our Amazing Core Team";
-$lang['about_helpers_tagline'] = "Our Amazing Helpers";
+$lang['about_core_tagline_helpers'] = "And... We wouldn't be so amazing without the help of our volunteer team.";
 
 //Home
 $lang['home_jumbotron_title'] = "Study Buddies is beyond backing you up...";
@@ -146,11 +136,13 @@ $lang['join_us'] = "Join Us";
 $lang['learn_more'] = "Learn more";
 $lang['view_details'] = "View details";
 
+//Gallery
+$lang['back_to_top'] = "Backto top";
+
 //Contact
 $lang['contact_contact_us'] = "Contact Us";
-$lang['contact_tagline'] = "reach out to us";
 $lang['message'] = "Message";
-$lang['message_subheading'] = "Send us a message.<br>We'll get back to you as soon as possible.";
+$lang['message_subheading'] = "We'll get back to you as soon as possible.";
 $lang['send_message'] = "Send Message";
 $lang['comment'] = "Comment";
 $lang['comment_subheading'] = "What's on your mind?<br>Give us a comment.";

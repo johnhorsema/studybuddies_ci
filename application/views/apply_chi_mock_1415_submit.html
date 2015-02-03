@@ -1,0 +1,51 @@
+<?php
+    $name = $email = $school = $level = $session = "";
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $school = $_POST['school'];
+        $level = $_POST['level'];
+        $session = $_POST['session'];
+    }
+?>
+<div class="container top-margin">
+    <div class="page-header">
+    <h1>中文模擬口試2015 <small>一年一度DSE前舉行的中文模擬口試</small></h1>
+    </div>
+    <div class="container"> 
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well text-muted">
+                    <div class="align-left">
+                        <h2 class="align-center">Confirmation</h2>
+                        <div class="row">
+                        <div class="col-sm-offset-4 col-md-4">
+                        <table>
+                        <tr>
+                            <td><b>Name:</b></td>
+                            <td style="padding-left: 20px"><?php echo $name;?></td>
+                        </tr>
+                        <tr>
+                            <td><b>Email:</b></td>
+                            <td style="padding-left: 20px"><?php echo $email;?></td>
+                        </tr>
+                        <tr>
+                            <td><b>School:</b></td>
+                            <td style="padding-left: 20px"><?php echo $school;?></td>
+                        </tr>
+                        <tr>
+                            <td><b>Level:</b></td>
+                            <td style="padding-left: 20px"><?php echo $level;?></td>
+                        </tr>
+                        <tr>
+                            <td><b>Session:</b></td>
+                            <td style="padding-left: 20px"><?php echo $session;?></td>
+                        </tr>
+                        </table>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

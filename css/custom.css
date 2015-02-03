@@ -1,3 +1,7 @@
+.navbar-nav > li{
+    top:10px;   
+}
+
 .navbar-form .form-group input{
     width: 120px;
     border: 1px solid #0988fb;
@@ -13,8 +17,7 @@
 .smallbar{
     margin: 8px;
     display: inline;
-    float: right;
-    overflow-x: visible;
+    float: left;
 }
 
 .smallbar li{
@@ -32,13 +35,41 @@
     border-radius: 4px;
 }
 
-.smallbar ul{
+.smallbar-ul{
     margin: 0;
+    width: 300px;
+    padding-left: 0;
+}
+
+@media(min-width:768px) {
+    .smallbar{
+        float: right;
+        padding-right: 0;
+    }
+}
+
+@media(min-width:992px) {
+    .smallbar{
+        float: left;
+        padding-right: 0;
+    }
+}
+
+@media(min-width:1200px) {
+    .smallbar{
+        float: right;
+        padding-right: 0;
+    }
 }
 
 .smallbar ul a{
     text-decoration: none;
     outline: 0;
+}
+
+.smallbar ul a small{
+    color: #fff;
+    font-weight: bold;
 }
 
 .smallbar ul .fb{
@@ -55,15 +86,6 @@
     background-size: 28px;
     background-position: center;
     padding: 6px 19px;
-}
-
-.smallbar .lang{
-    background-image: url(../images/icons/lang.svg);
-    background-repeat: no-repeat;
-    background-size: 24px;
-    background-position: 5px;
-    padding: 6px 6px;
-    color: #fff;
 }
 
 .smallbar .lang-dropdown{
@@ -93,18 +115,16 @@
     border-right: solid 4px #00396c;
 }
 
+#userbar{
+    visibility: hidden;
+}
+
 /*30px top margin*/
 .top-margin{
-    margin-top: 30px;
+    margin-top: 100px;
 }
 
-@media(min-width:768px) {
-    .top-margin{
-        margin-top: 80px;
-    }
-}
-
-@media(min-width:992px) {
+@media(max-width:768px) {
     .top-margin{
         margin-top: 30px;
     }
@@ -112,7 +132,7 @@
 
 /*section featured*/
 section.featured {
-	padding: 40px 0 60px;
+	padding: 0 0 5px;
 	background: #4baaff;
 	color: #fdfdfd;
 }
@@ -121,6 +141,7 @@ section.featured h2.slogan {
 	color: #fff;
 	font-size: 36px;
 	font-weight: 700;
+    text-align: left;
 }
   
  /* inner heading */
@@ -209,10 +230,14 @@ section.featured.inner {
     height: 80px;
     margin-left: 0;
     border: 7px solid #f1f1f1;
-    border-radius: 100%;
+    border-radius: 10%;
     text-align: center;
     color: #fff;
-    background-color: #4baaff;
+    background: #4baaff;
+}
+
+.timeline>li .timeline-image:hover {
+    border: 7px solid #0988fb;
 }
 
 .timeline>li .timeline-image h4 {
@@ -273,7 +298,7 @@ section.featured.inner {
         float: left;
         width: 41%;
         padding: 0 20px 20px 30px;
-        text-align: right;
+        text-align: left;
     }
 
     .timeline>li .timeline-image {
@@ -357,18 +382,11 @@ section.featured.inner {
     border: 7px solid #f1f1f1;
 }
 
-.team-detail{
-    color: #777;
-    font-size: 25px;
-    text-align: center;
-    line-height: 10px;
-}
-
 .team-detail .panel-body{
     background: #f1f1f1;
 }
 
-/* helper */
+/* helper
 .helper{
     text-align: center;
 }
@@ -391,7 +409,7 @@ section.featured.inner {
     background: #4baaff;
     color: #fff;
     font-weight: bold;
-}
+}*/
 
 .news-container{
     border-radius: 4px;
@@ -408,6 +426,10 @@ section.featured.inner {
     color: #4baaff;
 }
 
+.news-container .news-content .btn{
+    color: #fff;
+}
+
 .news-container .news-content hr{
     border: 0;
     height: 2px;
@@ -422,6 +444,10 @@ section.featured.inner {
     height: 110px;
     float: right;
     margin: 5px;
+}
+
+.news-img-full{
+    width: 70%;   
 }
 
 .contact-section-comment{
@@ -627,4 +653,67 @@ section.featured.inner {
     color: #4baaff;
     background: #fff;
     width: 150px;
+}
+
+
+/* Gallery */
+.thumb{
+    padding: 10px;
+}
+
+.loading-image{
+    background-color: #333;
+    width: 55px;
+    height: 55px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px; /* future proofing */
+    -khtml-border-radius: 10px;
+}
+
+.preloads img{
+    display: none;   
+}
+
+.back-to-top {
+    padding: 4px 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #999;
+}
+
+#gallery_nav a{
+    text-decoration: none;   
+}
+
+#gallery_nav ul{
+    padding:0;
+}
+
+#gallery_nav ul li > a{
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    border-radius: 0;  
+}
+
+#gallery_nav ul li > a:hover,
+#gallery_nav ul li.active > a{
+    background-color: #eee;
+    border-left: 3px solid #4baaff;
+    color: #23527c;
+}
+
+.carousel-control {
+  padding-top:10%;
+  width:5%;
+}
+
+.mycarousel-img{
+    height: 200px;
+    width: auto;
 }

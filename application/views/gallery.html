@@ -1,0 +1,102 @@
+<div class="container top-margin">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h1 class="page-header"><?php echo $this->lang->line('gallery_title');?></h1>
+            </div>
+            <div class="col-lg-10" id="gallery_panels">
+            
+<?php
+
+function generate_gallery($PHOTOPATH, &$t, &$farr){
+    $files = 1;
+    while(file_exists('images/photo_gallery/'.$PHOTOPATH.'/'.sprintf('%03d', $files).'.png')
+    ||file_exists('images/photo_gallery/'.$PHOTOPATH.'/'.sprintf('%03d', $files).'.jpg')
+    ||file_exists('images/photo_gallery/'.$PHOTOPATH.'/'.sprintf('%03d', $files).'.gif')){
+        $files++;
+    }
+
+    $arr = array();
+    for($j=1; $j<$files; $j++){
+        if(file_exists('images/photo_gallery/'.$PHOTOPATH.'/'.sprintf('%03d', $j).'.png')){
+            $extstr = '.png';
+        }
+        else if(file_exists('images/photo_gallery/'.$PHOTOPATH.'/'.sprintf('%03d', $j).'.jpg')){
+            $extstr = '.jpg';
+        }
+        else if(file_exists('images/photo_gallery/'.$PHOTOPATH.'/'.sprintf('%03d', $j).'.gif')){
+            $extstr = '.gif';
+        }
+        $photostr = sprintf('%03d', $j) . $extstr;
+        $arr[]=array('photo_name' => sprintf('%03d', $j),'photo_name_ext' => $photostr);
+    }
+    $farr = array('photo'=>$arr);
+
+    $t='
+    {photo}
+    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+    <a class="thumbnail" data-target="#'.$PHOTOPATH.'-{photo_name}" data-toggle="modal">
+    <img class="img-responsive" src="../images/photo_gallery/'.$PHOTOPATH.'/{photo_name_ext}" alt="">
+    </a>
+    </div>
+    <div class="modal fade" id="'.$PHOTOPATH.'-{photo_name}">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="'.$PHOTOPATH.'-{photo_name}" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <img class="img-responsive" src="../images/photo_gallery/'.$PHOTOPATH.'/{photo_name_ext}"></img>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    {/photo}';
+}
+
+$template;
+$file_arr;
+$gall_name = array('1415_mock_exam', '1314_gg', '1314_eng_mock_oral', '1314_chi_mock_oral');
+echo '<div class="preloads">';
+foreach($gall_name as $name){
+    generate_gallery($name, $template, $file_arr);
+    $preloaded='{photo}<img class="img-responsive" src="../images/photo_gallery/'.$name.'/{photo_name_ext}" alt="">{/photo}';
+    echo $this->parser->parse_string($preloaded, $file_arr, TRUE);
+}
+echo '</div>';
+
+foreach($gall_name as $key=>$name){
+    $key_add = 5-$key;
+    echo '<div class="panel panel-default"><div class="panel-heading" id="'.$name.'"><h3>'.$this->lang->line('about_past_timeline_'.$key_add.'_subheading').'</h3></div><div class="panel-content"><div class="container"><div class="row"><div class="col-lg-9">';
+    generate_gallery($name, $template, $file_arr);
+    $result = $this->parser->parse_string($template, $file_arr, TRUE);
+    echo $result;
+    echo '</div></div></div></div></div>';
+}
+
+?>
+            </div>
+            <div class="col-lg-2">
+            <div class="panel panel-default affix">
+                <div class="panel-content" id="gallery_nav">
+                
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="align-center text-muted"><h4><?php echo $this->lang->line('gallery_title');?></h4></li>
+                    <?php
+                        foreach($gall_name as $key=>$name){
+                            $key_add = 5-$key;
+                            echo '<li class=""><a href="#'.$name.'">'.$this->lang->line('about_past_timeline_'.$key_add.'_subheading').'</a></li>';
+                        }
+                    ?>
+                    </ul>
+
+                    <a class="back-to-top" href="#top">
+                      <?php echo $this->lang->line('back_to_top');?>
+                    </a>
+                </div>
+            </div>
+            </div>
+            <div class="clearfix"></div>

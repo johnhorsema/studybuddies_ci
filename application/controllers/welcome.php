@@ -36,11 +36,14 @@ class Welcome extends CI_Controller {
         }
         //$this->lang->load('english','english'); 
         $this->load->view('templates/header.html', $data);
-        if($page == 'contact' || $page == 'news' || $page == 'login' || $page == 'sign'){
+        if($page == 'contact' || $page == 'news' || $page == 'login' || $page == 'sign' || $page == 'home'){
             $this->load->database();   
         }
-        if($page == 'news'){
+        if($page == 'news' || $page == 'info' || $page == 'gallery'){
             $this->load->library('parser');   
+        }
+        if($page == 'home'){
+            $this->load->helper('file');  
         }
         $this->load->view($page.'.html', $data);
         $this->load->view('templates/footer.html', $data);

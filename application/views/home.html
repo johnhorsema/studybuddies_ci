@@ -1,28 +1,71 @@
+    <?php
+        $all_files = array();
+        $gall_name = array('1415_mock_exam', '1314_gg', '1314_eng_mock_oral', '1314_chi_mock_oral');
+        foreach($gall_name as $name){
+            $sub_all_files = get_filenames('images/photo_gallery/'.$name);
+            foreach($sub_all_files as $file){
+                if($file != 'main.jpg'){
+                    $all_files[] = 'images/photo_gallery/'.$name.'/'.$file;
+                }
+            }
+        }
+    ?>
     <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
+    <div class="jumbotron top-margin">
       <div class="container">
-        <h1><?php echo $this->lang->line('home_jumbotron_title');?>&raquo</h1>
-          <p><a class="label-warning" href="http://on.fb.me/ZXM1hS"><?php echo $this->lang->line('join_qna');?></a><br><a class="label-info" href="http://goo.gl/Zz7FGp"><?php echo $this->lang->line('join_us');?></a></p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button"><?php echo $this->lang->line('learn_more');?> &raquo;</a></p>
+          <div id="myCarousel" class="carousel slide">
+              <div class="carousel-inner">
+                  <?php
+                    for($i=0; $i<sizeof($all_files); $i+=4){
+                        if($i!=0){
+                            echo '                   <div class="item"><div class="row">';
+                        }
+                        else{
+                            echo '                   <div class="item active"><div class="row">';
+                        }
+                        for($j=0; $j<4 && ($i+$j)<sizeof($all_files); $j++){
+                            echo '                            <div class="col-sm-3"><img src="'.$all_files[$i+$j].'" alt="Image" class="img-responsive mycarousel-img">
+                                                        </div>';
+                        }
+
+                        echo '</div></div>';
+
+                    }
+                  ?>
+
+                </div>
+                <!--/carousel-inner-->
+              <a class="left carousel-control" href="#myCarousel" data-slide="prev"></a>
+              <a class="right carousel-control" href="#myCarousel" data-slide="next"></a>
+            </div>
+            <!--/myCarousel-->
+          </div>
       </div>
-    </div>
 
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-8">
           <h2><?php echo $this->lang->line('news_title');?></h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="index.php/news" role="button"><?php echo $this->lang->line('view_details');?> &raquo;</a></p>
+            <?php
+                $result=$this->lang->line('no_news');
+                $query = $this->db->query('SELECT title FROM news_events ORDER BY id DESC');
+
+                if($query->num_rows() > 0){
+                    $result='';
+                    for($i=0; $i<3 && $i<$query->num_rows(); $i++){
+                        $result = $result . '&#9830 ' . $query->row($i)->title . '<br>';
+                    }
+                }
+            ?>
+            <div class="well text-muted"><?php echo $result;?>
+                <div class="align-right"><a class="btn btn-default" href="index.php/news" role="button"><?php echo $this->lang->line('view_details');?> &raquo;</a></div>
+            </div>
         </div>
         <div class="col-md-4">
-          <h2><?php echo $this->lang->line('events_title');?></h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="index.php/news#events" role="button"><?php echo $this->lang->line('view_details');?> &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Apply Now!</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="index.php/applynow" role="button"><?php echo $this->lang->line('view_details');?> &raquo;</a></p>
+          <h2><?php echo $this->lang->line('about_past');?></h2>
+          <div class="well text-muted"><?php echo '&#9830 '.$this->lang->line('about_past_timeline_5_subheading').'<br>&#9830 '.$this->lang->line('about_past_timeline_4_subheading').'<br>&#9830 '.$this->lang->line('about_past_timeline_3_subheading');?>
+              <div class="align-right"><a class="btn btn-default" href="index.php/info#past_events" role="button"><?php echo $this->lang->line('view_details');?> &raquo;</a></div>
+            </div>
         </div>
       </div>
